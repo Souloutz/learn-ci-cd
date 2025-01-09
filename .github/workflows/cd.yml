@@ -33,4 +33,4 @@ jobs:
         run: gcloud info
 
       - name: Push to Google Artifact Registry
-        run: gcloud builds submit --tag us-east1-docker.pkg.dev/notely-bootdev/notely-ar-repo/souloutz/notely:latest .
+        run: gcloud builds submit --tag us-east1-docker.pkg.dev/notely-bootdev/notely-ar-repo/notely:latest .

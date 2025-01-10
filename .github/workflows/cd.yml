@@ -8,6 +8,8 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
       - name: Check out code
@@ -23,9 +25,6 @@ jobs:
 
       - name: Run build script
         run: ./scripts/buildprod.sh
-
-      env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Migrate data
         run: ./scripts/migrateup.sh
